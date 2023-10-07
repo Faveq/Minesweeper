@@ -3,12 +3,14 @@ namespace Minesweeper.Models
 {
     public class GameConfigurationModel
     {
-        public int MapSize { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }    
         public int MinesCount { get; set; }
 
-        public GameConfigurationModel(int mapSize, int minesCount)
+        public GameConfigurationModel(int height,int width, int minesCount)
         {
-            MapSize = mapSize;
+            Height = height;
+            Width = width;
             MinesCount = minesCount;
         }
     }

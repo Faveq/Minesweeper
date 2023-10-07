@@ -3,12 +3,21 @@ namespace Minesweeper.ViewModels
 {
     public class GameConfigurationViewModel : ViewModelBase
     {
-        private int mapSize;
+        private int height;
 
-        public int MapSize
+        public int Height
         {
-            get => mapSize;
-            set => SetProperty(ref mapSize, value);
+            get => height;
+            set => SetProperty(ref height, value);
+        }
+
+
+        private int width;
+
+        public int Width
+        {
+            get => width;
+            set => SetProperty(ref width, value);
         }
 
         private int minesCount;
