@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ueTwjRZ8WDb3HlFMQ7OK+O1gsj3xpIB/sIu92nelAs9F3ShXMYWjAmMzXddlCqFoomxf3eaBYFXlGMRedM+/zg==",
+  "dgSpecHash": "sxQUL2mS/z3DULe7QNiv/Fx5beT3gtjZTo42XprX7Qgru1ZCHX3xlz3Ew71WROiKJ49TbQUswqyljOdyRRV2ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Minesweeper.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\batek\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\batek\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

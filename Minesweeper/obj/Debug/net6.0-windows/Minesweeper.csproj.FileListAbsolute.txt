@@ -3,11 +3,11 @@ C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Minesweeper.runtimeconfig.json
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Minesweeper.dll
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Minesweeper.pdb
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\StartingWindow.g.cs
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\StartingWindowView.g.cs
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper_MarkupCompile.cache
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper_MarkupCompile.lref
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\StartingWindow.baml
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\StartingWindowView.baml
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.g.resources
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.AssemblyInfoInputs.cache
@@ -18,3 +18,6 @@ C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.pdb
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.genruntimeconfig.cache
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\ref\Minesweeper.dll
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\MvvmHelpers.dll
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.csproj.AssemblyReference.cache
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.csproj.CopyComplete

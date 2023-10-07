@@ -9,14 +9,12 @@ using System.Windows;
 
 namespace Minesweeper
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            StartingWindow startingWindow = new StartingWindow();
+            StartingWindowView startingWindowView = new();
+            startingWindowView.Show();
             base.OnStartup(e);
         }
     }
