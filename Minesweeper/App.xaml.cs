@@ -1,10 +1,5 @@
-﻿using Minesweeper.Views;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Minesweeper.ViewModels;
+using Minesweeper.Views;
 using System.Windows;
 
 namespace Minesweeper
@@ -14,9 +9,10 @@ namespace Minesweeper
         protected override void OnStartup(StartupEventArgs e)
         {
             StartingWindowView startingWindowView = new();
+            
             startingWindowView.Show();
             base.OnStartup(e);
         }
     }
-    
+
 }

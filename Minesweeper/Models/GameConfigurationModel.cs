@@ -1,7 +1,7 @@
 ﻿
 namespace Minesweeper.Models
 {
-    public class GameConfigurationModel 
+    public class GameConfigurationModel
     {
         public int MapSize { get; set; }
         public int MinesCount { get; set; }
