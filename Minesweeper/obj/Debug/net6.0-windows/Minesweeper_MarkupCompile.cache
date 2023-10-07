@@ -1,5 +1,5 @@
 ﻿Minesweeper
-1.0.0.0
+
 
 winexe
 C#
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\App.xaml
-1-2102786922
+11184617088
 
-52101736102
+3-1161865936
 194183970531
-Views\StartingWindowView.xaml;
+Views\StartingWindow.xaml;
 
-False
+True
 

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Minesweeper
+namespace Minesweeper.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StartingWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartingWindow : Page
     {
-        public MainWindow()
+        public StartingWindow()
         {
             InitializeComponent();
         }
