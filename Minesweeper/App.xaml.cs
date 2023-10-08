@@ -8,11 +8,12 @@ namespace Minesweeper
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            CustomGameSettingsView customGameSettingsView = new();
-    
-            GameWindowView gameWindowView = new ();
+            GameWindowView gameWindowView = new()
+            {
+                DataContext = new MainViewModel()
+            };
 
-            customGameSettingsView.Show();
+            gameWindowView.Show();
             base.OnStartup(e);
         }
     }

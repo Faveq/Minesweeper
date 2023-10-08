@@ -1,7 +1,10 @@
-﻿using MvvmHelpers;
+﻿using Minesweeper.Commands;
+using MvvmHelpers;
+using System.Windows.Input;
+
 namespace Minesweeper.ViewModels
 {
-    public class GameConfigurationViewModel : ViewModelBase
+    public class CustomGameConfigurationViewModel : ViewModelBase
     {
         private int height;
 
@@ -27,8 +30,14 @@ namespace Minesweeper.ViewModels
             get => minesCount;
             set => SetProperty(ref minesCount, value);
         }
+        
+        public ICommand CreateCustomGameCommand { get; }
+        public ICommand CloseCustomGameSettingsCommand { get; }
 
 
-
+        public CustomGameConfigurationViewModel() {
+            CreateCustomGameCommand = new CreateCustomGameCommand();
+            CloseCustomGameSettingsCommand = new CloseCustomGameSettingsCommand(this);
+        }
     }
 }

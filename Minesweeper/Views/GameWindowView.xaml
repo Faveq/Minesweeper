@@ -13,10 +13,10 @@
         <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Game">
-                <MenuItem Header="_Begginer" />
-                <MenuItem Header="_Intermediate" />
-                <MenuItem Header="_Expert" />
-                <MenuItem Header="_Custom" />
+                <MenuItem Header="_Begginer" Command="{Binding RunPresetGameCommand}" CommandParameter="begginer"/>
+                <MenuItem Header="_Intermediate" Command="{Binding RunPresetGameCommand}" CommandParameter="intermediate"/>
+                <MenuItem Header="_Expert" Command="{Binding RunPresetGameCommand}" CommandParameter="expert"/>
+                <MenuItem Header="_Custom" Command="{Binding OpenCustomGameSettingsCommand}"/>
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>
