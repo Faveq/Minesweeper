@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using Minesweeper.Commands;
+using Minesweeper.ViewModels;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Minesweeper.Views
 {
@@ -7,6 +10,7 @@ namespace Minesweeper.Views
         public GameWindowView()
         {
             InitializeComponent();
+            DataContext = new MainViewModel(stackPanel, gameWindow);
         }
     }
 }

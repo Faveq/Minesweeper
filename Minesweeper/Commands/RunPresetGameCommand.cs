@@ -1,48 +1,39 @@
-﻿using System;
-using System.Diagnostics;
+﻿using Minesweeper.Models;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Minesweeper.Commands
 {
     public class RunPresetGameCommand : BaseCommand
     {
-        private int height = 0;
-        private int width = 0;
-        private int minesCount = 0;
 
-        private readonly ICommand _GenerateGameBoardCommand;
+        private GameBoardSizeModel? selectedDifficulty;
 
-        public RunPresetGameCommand()
+        private readonly ICommand _generateGameBoardCommand;
+
+        public RunPresetGameCommand(StackPanel stackPanel, Window gameWindow)
         {
-            _GenerateGameBoardCommand = new GenerateGameBoardCommand();
+            _generateGameBoardCommand = new GenerateGameBoardCommand(stackPanel, gameWindow);
         }
 
         public override void Execute(object? parameter)
         {
 
-           switch (parameter)
+            switch (parameter)
             {
                 case "begginer":
-                    height = 8;
-                    minesCount = 10;
+                    selectedDifficulty = new(8, 8, 10);
                     break;
 
                 case "intermediate":
-                    height = 16;
-                    minesCount = 40;
+                    selectedDifficulty = new(16, 16, 40);
                     break;
-
                 case "expert":
-                    height = 16;
-                    width = 30;
-                    minesCount = 99;
+                    selectedDifficulty = new(16, 30, 99);
                     break;
             }
-
-            if(width == 0)
-            {
-
-            }
+            _generateGameBoardCommand.Execute(selectedDifficulty);
         }
     }
 }

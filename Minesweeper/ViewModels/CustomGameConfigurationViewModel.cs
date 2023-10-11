@@ -1,5 +1,8 @@
 ﻿using Minesweeper.Commands;
 using MvvmHelpers;
+using System.Collections;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Minesweeper.ViewModels
@@ -35,9 +38,8 @@ namespace Minesweeper.ViewModels
         public ICommand CloseCustomGameSettingsCommand { get; }
 
 
-        public CustomGameConfigurationViewModel() {
-            CreateCustomGameCommand = new CreateCustomGameCommand();
-            CloseCustomGameSettingsCommand = new CloseCustomGameSettingsCommand(this);
+        public CustomGameConfigurationViewModel(StackPanel stackPanel, Window window) {
+            CreateCustomGameCommand = new CreateCustomGameCommand(stackPanel, window, this);
         }
     }
 }

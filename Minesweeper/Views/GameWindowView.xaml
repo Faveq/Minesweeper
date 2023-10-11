@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Height="266" Width="250"
       Title="GameWindowView"
-        ResizeMode="NoResize">
+      ResizeMode="NoResize" Name="gameWindow">
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -19,107 +19,11 @@
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>
+            <MenuItem Header="_About">
+            </MenuItem>
         </Menu >
-        <StackPanel Margin="6 30 6 15">
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
-            <WrapPanel>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-                <Button Width="17" Height="17"/>
-            </WrapPanel>
+        <StackPanel Margin="6 30 6 5" x:Name="stackPanel">
+            
         </StackPanel>
     </DockPanel >
 </Window>

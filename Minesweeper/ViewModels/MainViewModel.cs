@@ -1,9 +1,6 @@
 ﻿using Minesweeper.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Minesweeper.ViewModels
@@ -13,10 +10,13 @@ namespace Minesweeper.ViewModels
         CustomGameConfigurationViewModel CustomGameConfigurationViewModel { get; }
         public ICommand OpenCustomGameSettingsCommand { get; }
         public ICommand RunPresetGameCommand { get; }
-        public MainViewModel() {
-            CustomGameConfigurationViewModel = new();
+
+        public MainViewModel(StackPanel stackPanel, Window gameWindow)
+        {
+            CustomGameConfigurationViewModel = new(stackPanel, gameWindow);
             OpenCustomGameSettingsCommand = new OpenCustomGameSettingsCommand(CustomGameConfigurationViewModel);
-            RunPresetGameCommand = new RunPresetGameCommand();
+            RunPresetGameCommand = new RunPresetGameCommand(stackPanel, gameWindow);
+
         }
 
     }
