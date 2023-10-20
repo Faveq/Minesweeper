@@ -1,0 +1,20 @@
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\bin\Debug\net6.0-windows\rwe tgwe.exe
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\bin\Debug\net6.0-windows\rwe tgwe.deps.json
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\bin\Debug\net6.0-windows\rwe tgwe.runtimeconfig.json
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\bin\Debug\net6.0-windows\rwe tgwe.dll
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\bin\Debug\net6.0-windows\rwe tgwe.pdb
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe_MarkupCompile.cache
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe_MarkupCompile.lref
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.g.resources
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.AssemblyInfoInputs.cache
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.AssemblyInfo.cs
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.csproj.CoreCompileInputs.cache
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.dll
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\refint\rwe tgwe.dll
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.pdb
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\rwe tgwe.genruntimeconfig.cache
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\rwe tgwe\obj\Debug\net6.0-windows\ref\rwe tgwe.dll

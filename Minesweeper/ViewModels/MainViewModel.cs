@@ -11,6 +11,8 @@ namespace Minesweeper.ViewModels
         public ICommand OpenCustomGameSettingsCommand { get; }
         public ICommand RunPresetGameCommand { get; }
 
+        
+
         public MainViewModel(StackPanel stackPanel, Window gameWindow)
         {
             CustomGameConfigurationViewModel = new(stackPanel, gameWindow);

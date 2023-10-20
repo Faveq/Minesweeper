@@ -35,7 +35,6 @@ namespace Minesweeper.ViewModels
         }
         
         public ICommand CreateCustomGameCommand { get; }
-        public ICommand CloseCustomGameSettingsCommand { get; }
 
 
         public CustomGameConfigurationViewModel(StackPanel stackPanel, Window window) {
