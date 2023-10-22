@@ -33,8 +33,8 @@
         <TextBox Grid.Row="2" Width="50" Height="20" Text="{Binding MinesCount}" Name="minesCountTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="2" />
         
         <StackPanel Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center">
-            <Button Grid.Row="1" Grid.Column="1" Margin="0 0 0 20" Content="Ok" Width="50" Height="20" Command="{Binding CreateCustomGameCommand}"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="Cancel" Width="50" Height="20"/>
+            <Button Grid.Row="1" Grid.Column="1" Margin="0 0 0 20" Content="Ok" Click="Close" Width="50" Height="20" Command="{Binding CreateCustomGameCommand}"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="Cancel" Width="50" Click="Close" Height="20"/>
         </StackPanel>
     </Grid>
 </Window>

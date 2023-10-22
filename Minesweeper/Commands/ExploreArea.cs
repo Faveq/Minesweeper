@@ -1,5 +1,5 @@
 ﻿using Minesweeper.Models;
-using System;
+using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace Minesweeper.Commands
@@ -12,38 +12,46 @@ namespace Minesweeper.Commands
 
         private static GameBoardSizeModel gameBoardSizeModel;
 
-        public static int[,] ExploreEmptyArea(int row , int col, GameBoardSizeModel gameBoardSizeModel, int[,] gameBoard)
+        public static int[,] ExploreEmptyArea(int x, int y, GameBoardSizeModel gameBoardSizeModel, int[,] gameBoard)
         {
-            if (row < 0 || row >= gameBoardSizeModel.Height || col < 0 || col >= gameBoardSizeModel.Width || gameBoard[row, col] < 0 || gameBoard[row, col] > 8)
+
+            Debug.WriteLine($"Wywyołano dla: {x}/{y}");
+
+            if (x < 1 || x > gameBoardSizeModel.Height || y < 1 || y > gameBoardSizeModel.Width || gameBoard[x, y] < 0 || gameBoard[y, x] > 8)
             {
                 return gameBoard;
             }
-            else if (gameBoard[row, col] >0 && gameBoard[row, col] < 9)
+            else if (gameBoard[x, y] > 0 && gameBoard[x, y] < 9)
             {
-                buttonList[row, col].Content = gameBoard[row, col];
+                buttonList[x - 1, y - 1].Content = gameBoard[x, y];
+                buttonList[x - 1, y - 1].IsEnabled = false;
+                gameBoard[x, y] = -1;
+
                 return gameBoard;
             }
-            buttonList[row, col].Content = "X";
+
+            buttonList[x - 1, y - 1].IsEnabled = false;
+            gameBoard[x, y] = -1; //-1 means its uncovered
 
 
-            gameBoard[row, col] = -1; //-1 means its uncovered
 
 
-            ExploreEmptyArea(row - 1, col - 1, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row - 1, col, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row - 1, col + 1, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row, col - 1, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row, col + 1, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row + 1, col - 1, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row + 1, col, gameBoardSizeModel, gameBoard);
-            ExploreEmptyArea(row + 1, col + 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x - 1, y - 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x - 1, y, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x - 1, y + 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x, y - 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x, y + 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x + 1, y - 1, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x + 1, y, gameBoardSizeModel, gameBoard);
+            ExploreEmptyArea(x + 1, y + 1, gameBoardSizeModel, gameBoard);
 
             return gameBoard;
         }
 
 
-        public static void PassButtonsList(Button[,] buttonsList) { 
-        buttonList = buttonsList;
+        public static void PassButtonsList(Button[,] buttonsList)
+        {
+            buttonList = buttonsList;
         }
     }
 }

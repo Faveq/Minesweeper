@@ -22,9 +22,11 @@ namespace Minesweeper.Commands
         {
             if (parameter != null)
             {
-                _stackPanel.Children.Clear();
-
                 GameBoardSizeModel gameBoardSizeModel = (GameBoardSizeModel)parameter; //board size in parameter
+                _stackPanel.Children.Clear();
+                buttonsList = new Button[gameBoardSizeModel.Width, gameBoardSizeModel.Height];
+
+                
                 _clickCommand = new ClickCommand(gameBoardSizeModel, buttonsList);
 
                 _gameWindow.Width = gameBoardSizeModel.Width * 17 + 30;
@@ -34,7 +36,7 @@ namespace Minesweeper.Commands
 
 
 
-                buttonsList = new Button[gameBoardSizeModel.Width, gameBoardSizeModel.Height ];
+               
 
                 for (int y = 0; y < gameBoardSizeModel.Height; y++)
                 {
@@ -46,7 +48,7 @@ namespace Minesweeper.Commands
 
                     for (int x = 0; x < gameBoardSizeModel.Width; x++)
                     {
-                        buttonName = x.ToString() + "_" + y.ToString();
+                        buttonName = (x +1).ToString() + "_" + (y+1).ToString();
                         Button button = new Button();
                         button.Height = 17;
                         button.Width = 17;

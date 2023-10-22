@@ -13,15 +13,18 @@ namespace Minesweeper.Commands.ClickingCommands
         private int clickedButtonPosY;
         private bool isFirstClick = true;
         private int[,]? gameBoard;
+        private Button[,] buttonsList;
         private Button? clickedButton;
+        private GameEnd gameEnd;
+
 
         private readonly GameBoardSizeModel _gameBoardSizeModel;
 
 
-        public ClickCommand(GameBoardSizeModel gameBoardSizeModel, Button[,] buttonList)
+        public ClickCommand(GameBoardSizeModel gameBoardSizeModel, Button[,] buttonsList)
         {
             _gameBoardSizeModel = gameBoardSizeModel;
-
+            this.buttonsList = buttonsList;
         }
         public override void Execute(object? parameter) //// parameter => btn pos as string "x_y"
         {
@@ -37,9 +40,18 @@ namespace Minesweeper.Commands.ClickingCommands
                 {
                     PlaceMines(_gameBoardSizeModel);
                     isFirstClick = false;
+
                     if (gameBoard[clickedButtonPosX, clickedButtonPosY] != 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] != 9)
                     {
                         clickedButton.Content = gameBoard[clickedButtonPosX, clickedButtonPosY];
+                        clickedButton.IsEnabled = false;
+                        gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
+                    }
+                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
+                    {
+
+                        gameBoard = ExploreArea.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY, _gameBoardSizeModel, gameBoard);
+
                     }
                 }
                 else
@@ -47,25 +59,21 @@ namespace Minesweeper.Commands.ClickingCommands
                     if (gameBoard[clickedButtonPosX, clickedButtonPosY] > 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] < 9) // number field click
                     {
                         clickedButton.Content = gameBoard[clickedButtonPosX, clickedButtonPosY];
+                        gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
+                        clickedButton.IsEnabled = false;
                     }
                     else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
                     {
 
                         gameBoard = ExploreArea.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY , _gameBoardSizeModel, gameBoard);
 
-                        for (int y = 0; y < _gameBoardSizeModel.Height; y++)
-                        {
-                            for (int x = 0; x < _gameBoardSizeModel.Width; x++)
-                            {
-                                Debug.Write(gameBoard[x, y] + " ");
-                            }
-                            Debug.WriteLine("");
-                        }
+
 
                     }
                     else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 9) //mine filed click
                     {
-                        MessageBox.Show("Mine");
+                        gameEnd = new(buttonsList, gameBoard);
+                        gameEnd.BadEnding();
                     }
                 }
 
@@ -117,16 +125,6 @@ namespace Minesweeper.Commands.ClickingCommands
                 minesCoordinates.Add((row, col));
                 availableIndices.RemoveAt(randomIndex);
             }
-            /*
-            for (int y = 0; y < gameBoardSize.Height; y++)
-            {
-                for (int x = 0; x < gameBoardSize.Width; x++)
-                {
-                    Debug.Write(gameBoard[x, y] + " ");
-                }
-                Debug.WriteLine("");
-            }
-            */
             return CaclulateFields(minesCoordinates, gameBoard);
         }
         private int[,] CaclulateFields(List<(int, int)> minesCoordinates, int[,] gameBoard)
@@ -158,3 +156,14 @@ namespace Minesweeper.Commands.ClickingCommands
     }
 }
 
+/*                     
+ *                     for (int y = 1; y < _gameBoardSizeModel.Height + 1; y++)
+                        {
+                            for (int x = 1; x < _gameBoardSizeModel.Width + 1; x++)
+                            {
+                                Debug.Write(gameBoard[x, y] + " ");
+                            }
+                            Debug.WriteLine("");
+                        }
+                        Debug.WriteLine("===================================="); 
+*/

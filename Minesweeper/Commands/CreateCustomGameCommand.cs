@@ -19,6 +19,33 @@ namespace Minesweeper.Commands
 
         public override void Execute(object? parameter)
         {
+            if (_customGameConfigurationViewModel.Height < 8)
+            {
+                _customGameConfigurationViewModel.Height = 8;
+            }
+            else if (_customGameConfigurationViewModel.Height > 24)
+            {
+                _customGameConfigurationViewModel.Height = 24;
+            }
+
+            if (_customGameConfigurationViewModel.Width < 8)
+            {
+                _customGameConfigurationViewModel.Width = 8;
+            }
+            else if (_customGameConfigurationViewModel.Width > 30)
+            {
+                _customGameConfigurationViewModel.Width = 30;
+            }
+
+            if (_customGameConfigurationViewModel.MinesCount > ((_customGameConfigurationViewModel.Width - 1) * (_customGameConfigurationViewModel.Height - 1)))
+            {
+                _customGameConfigurationViewModel.MinesCount = (_customGameConfigurationViewModel.Width - 1) * (_customGameConfigurationViewModel.Height - 1);
+            }
+            else if (_customGameConfigurationViewModel.MinesCount < 10)
+            {
+                _customGameConfigurationViewModel.MinesCount = 10;
+            }
+
             _generateGameBoardCommand.Execute(new GameBoardSizeModel(_customGameConfigurationViewModel.Height, _customGameConfigurationViewModel.Width, _customGameConfigurationViewModel.MinesCount));
         }
     }

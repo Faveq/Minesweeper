@@ -15,5 +15,10 @@ namespace Minesweeper.Views
         {
             InitializeComponent();
         }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+          Close();
+        }
     }
 }
