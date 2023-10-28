@@ -23,3 +23,5 @@ C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\GameWindowView.baml
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\CustomGameSettingsView.g.cs
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\CustomGameSettingsView.baml
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\flag.png
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\mine.png

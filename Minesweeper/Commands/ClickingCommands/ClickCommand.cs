@@ -1,9 +1,10 @@
-﻿using Minesweeper.Models;
+﻿using Minesweeper.Controllers;
+using Minesweeper.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Minesweeper.Commands.ClickingCommands
 {
@@ -11,11 +12,11 @@ namespace Minesweeper.Commands.ClickingCommands
     {
         private int clickedButtonPosX;
         private int clickedButtonPosY;
-        private bool isFirstClick = true;
+        private bool isFirstClick = true, isEverythingUncovered = true;
         private int[,]? gameBoard;
         private Button[,] buttonsList;
         private Button? clickedButton;
-        private GameEnd gameEnd;
+        private GameEndController gameEnd;
 
 
         private readonly GameBoardSizeModel _gameBoardSizeModel;
@@ -34,7 +35,7 @@ namespace Minesweeper.Commands.ClickingCommands
                 clickedButton = (Button)parameter;
                 clickedButtonPosX = GetCoordinate(clickedButton.Name, "x");
                 clickedButtonPosY = GetCoordinate(clickedButton.Name, "y");
-
+                
 
                 if (isFirstClick)
                 {
@@ -43,8 +44,7 @@ namespace Minesweeper.Commands.ClickingCommands
 
                     if (gameBoard[clickedButtonPosX, clickedButtonPosY] != 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] != 9)
                     {
-                        clickedButton.Content = gameBoard[clickedButtonPosX, clickedButtonPosY];
-                        clickedButton.IsEnabled = false;
+                        DeactivateButton(clickedButton, gameBoard[clickedButtonPosX, clickedButtonPosY]);
                         gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
                     }
                     else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
@@ -58,17 +58,12 @@ namespace Minesweeper.Commands.ClickingCommands
                 {
                     if (gameBoard[clickedButtonPosX, clickedButtonPosY] > 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] < 9) // number field click
                     {
-                        clickedButton.Content = gameBoard[clickedButtonPosX, clickedButtonPosY];
+                        DeactivateButton(clickedButton, gameBoard[clickedButtonPosX, clickedButtonPosY]);
                         gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
-                        clickedButton.IsEnabled = false;
                     }
                     else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
                     {
-
-                        gameBoard = ExploreArea.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY , _gameBoardSizeModel, gameBoard);
-
-
-
+                        gameBoard = ExploreArea.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY, _gameBoardSizeModel, gameBoard);
                     }
                     else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 9) //mine filed click
                     {
@@ -77,10 +72,53 @@ namespace Minesweeper.Commands.ClickingCommands
                     }
                 }
 
+                for (int y = 1; y < gameBoard.GetLength(1) - 1; y++)
+                {
+                    for (int x = 1; x < gameBoard.GetLength(0) - 1; x++)
+                    {
+                        if (gameBoard[x, y] != -1 && gameBoard[x, y] != 9)
+                        {
+                            isEverythingUncovered = false;
+                            break;
+                        }                  
+                    }
+                }
+                //for (int y = 1; y < gameBoard.GetLength(1) - 1; y++)
+                //{
+                //    for (int x = 1; x < gameBoard.GetLength(0) - 1; x++)
+                //    {
+                //        Debug.Write(gameBoard[x, y]);      
+                       
+                //    }
+                //    Debug.WriteLine("");
+                //}
+                //Debug.WriteLine("================================================");
+                if (isEverythingUncovered)
+                {
+                    gameEnd = new(buttonsList, gameBoard);
+                    gameEnd.GoodEnding();
+                }
+                else
+                {
+                    isEverythingUncovered = true;
+                }
+
             }
 
         }
 
+        private void DeactivateButton(Button button, int number = 0)
+        {
+            Color backgroundColor = Color.FromArgb(45, 0, 0, 0); // Kolor RGBA: 0,0,0,140
+            SolidColorBrush brush = new SolidColorBrush(backgroundColor);
+
+            if (number != 0)
+            {
+                button.Content = number;
+                button.IsHitTestVisible = false;
+                button.Background = brush;
+            }
+        }
 
         private int GetCoordinate(string coordinateCode, string coordinate)
         {

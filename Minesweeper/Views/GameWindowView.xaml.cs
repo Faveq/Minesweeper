@@ -12,5 +12,10 @@ namespace Minesweeper.Views
             InitializeComponent();
             DataContext = new MainViewModel(stackPanel, gameWindow);
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -20,9 +20,12 @@ namespace test
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ViewModel _viewModel;
         public MainWindow()
         {
+            DataContext = _viewModel = new ViewModel();
             InitializeComponent();
+
         }
     }
 }

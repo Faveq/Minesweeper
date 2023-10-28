@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:test"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <ComboBox Name="myComboBox" SelectedIndex="{Binding SelectedIndex}">
+            <ComboBoxItem Content="Opcja 1" />
+            <ComboBoxItem Content="Opcja 2" />
+            <ComboBoxItem Content="Opcja 3" />
+        </ComboBox>
+        <Button Command="{Binding ClickCommand}" Content="Test"/>
+    </StackPanel>
 </Window>

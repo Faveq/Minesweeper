@@ -11,4 +11,17 @@
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\flag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\mine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

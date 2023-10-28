@@ -9,9 +9,15 @@
       Title="GameWindowView"
       ResizeMode="NoResize" Name="gameWindow">
 
-    <DockPanel>
+    <DockPanel >
+        <DockPanel.Background>
+            <ImageBrush ImageSource="C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\Resources\Sand.jpg" />
+        </DockPanel.Background>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_Game">
+            <Menu.Background>
+                <ImageBrush/>
+            </Menu.Background>
+            <MenuItem Header="_Game" Click="MenuItem_Click">
                 <MenuItem Header="_Begginer" Command="{Binding RunPresetGameCommand}" CommandParameter="begginer"/>
                 <MenuItem Header="_Intermediate" Command="{Binding RunPresetGameCommand}" CommandParameter="intermediate"/>
                 <MenuItem Header="_Expert" Command="{Binding RunPresetGameCommand}" CommandParameter="expert"/>
@@ -22,8 +28,9 @@
             <MenuItem Header="_About">
             </MenuItem>
         </Menu >
-        <StackPanel Margin="6 30 6 5" x:Name="stackPanel">
+        <StackPanel x:Name="stackPanel">
             
         </StackPanel>
+
     </DockPanel >
 </Window>
