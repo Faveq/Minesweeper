@@ -1,10 +1,5 @@
 ﻿using Minesweeper.ViewModels;
 using Minesweeper.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Minesweeper.Commands
 {
@@ -19,9 +14,10 @@ namespace Minesweeper.Commands
 
         public override void Execute(object? parameter)
         {
-            CustomGameSettingsView customGameSettingsView = new() {
+            CustomGameSettingsView customGameSettingsView = new()
+            {
                 DataContext = _customGameConfigurationViewModel
-        };
+            };
 
             customGameSettingsView.Show();
         }

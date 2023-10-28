@@ -1,7 +1,5 @@
-﻿using Minesweeper.Commands;
-using Minesweeper.ViewModels;
+﻿using Minesweeper.ViewModels;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Minesweeper.Views
 {

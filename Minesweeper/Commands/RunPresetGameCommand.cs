@@ -1,5 +1,4 @@
 ﻿using Minesweeper.Models;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,12 +11,10 @@ namespace Minesweeper.Commands
         private GameBoardSizeModel? selectedDifficulty;
 
         private readonly ICommand _generateGameBoardCommand;
-        private readonly ICommand _restartGameCommand;
 
         public RunPresetGameCommand(StackPanel stackPanel, Window gameWindow)
         {
             _generateGameBoardCommand = new GenerateGameBoardCommand(stackPanel, gameWindow);
-            _restartGameCommand = new RestartGameCommand();
         }
 
         public override void Execute(object? parameter)
@@ -36,7 +33,7 @@ namespace Minesweeper.Commands
                     selectedDifficulty = new(16, 30, 99);
                     break;
             }
-           
+
             _generateGameBoardCommand.Execute(selectedDifficulty);
         }
     }

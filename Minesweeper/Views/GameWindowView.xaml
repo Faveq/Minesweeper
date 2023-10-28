@@ -23,13 +23,12 @@
                 <MenuItem Header="_Expert" Command="{Binding RunPresetGameCommand}" CommandParameter="expert"/>
                 <MenuItem Header="_Custom" Command="{Binding OpenCustomGameSettingsCommand}"/>
                 <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="_Exit" Command="{Binding ShutDownGameCommand}"/>
             </MenuItem>
-            <MenuItem Header="_About">
+            <MenuItem Header="_About" Command="{Binding ShowAboutCommand}">
             </MenuItem>
         </Menu >
         <StackPanel x:Name="stackPanel">
-            
         </StackPanel>
 
     </DockPanel >

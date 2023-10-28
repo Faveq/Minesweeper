@@ -1,31 +1,28 @@
-﻿using Minesweeper.Commands;
+﻿using Minesweeper.Appdata;
+using Minesweeper.Commands;
 using Minesweeper.Controllers;
+using Minesweeper.Models;
 using System;
-using System.ComponentModel;
-using System.Threading;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Threading;
 
 namespace Minesweeper.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        CustomGameConfigurationViewModel CustomGameConfigurationViewModel { get; }
-        public ICommand OpenCustomGameSettingsCommand { get; }
-        public ICommand RunPresetGameCommand { get; }
-        public ICommand TimerCommand {  get; }
 
-        private int minesCount;
+        private static int minesCount;
 
         public int MinesCount
         {
             get => minesCount;
             set => SetProperty(ref minesCount, value);
         }
-
+        public int ElapsedSeconds
+        {
+            get { return (int)ElapsedTime.TotalSeconds; }
+        }
         private TimeSpan elapsedTime;
         public TimeSpan ElapsedTime
         {
@@ -40,10 +37,13 @@ namespace Minesweeper.ViewModels
                 }
             }
         }
-        public int ElapsedSeconds
-        {
-            get { return (int)ElapsedTime.TotalSeconds; }
-        }
+
+        CustomGameConfigurationViewModel CustomGameConfigurationViewModel { get; }
+        public ICommand OpenCustomGameSettingsCommand { get; }
+        public ICommand RunPresetGameCommand { get; }
+        public ICommand ShutDownGameCommand { get; }
+        public ICommand ShowAboutCommand { get; }
+
 
 
 
@@ -51,8 +51,11 @@ namespace Minesweeper.ViewModels
         {
             CustomGameConfigurationViewModel = new(stackPanel, gameWindow);
             OpenCustomGameSettingsCommand = new OpenCustomGameSettingsCommand(CustomGameConfigurationViewModel);
-            RunPresetGameCommand = new RunPresetGameCommand(stackPanel, gameWindow);
-            StatsController.GetViewModel(this);         
+            RunPresetGameCommand = new RunPresetGameCommand(stackPanel, gameWindow);         
+            ShutDownGameCommand = new ShutDownGameCommand();
+            ShowAboutCommand = new ShowAboutCommand();
+            StatsController.GetViewModel(this);
+            new GenerateGameBoardCommand(stackPanel, gameWindow).Execute(new AppData().ReadSavedData());
         }
     }
 }

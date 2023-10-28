@@ -2,13 +2,12 @@
 using Minesweeper.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace Minesweeper.Commands
 {
     public class CreateCustomGameCommand : BaseCommand
     {
-        private readonly GenerateGameBoardCommand _generateGameBoardCommand; 
+        private readonly GenerateGameBoardCommand _generateGameBoardCommand;
         private readonly CustomGameConfigurationViewModel _customGameConfigurationViewModel;
 
         public CreateCustomGameCommand(StackPanel stackPanel, Window gameWindow, CustomGameConfigurationViewModel customGameConfigurationViewModel)

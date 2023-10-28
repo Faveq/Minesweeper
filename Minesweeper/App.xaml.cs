@@ -1,5 +1,4 @@
-﻿using Minesweeper.ViewModels;
-using Minesweeper.Views;
+﻿using Minesweeper.Views;
 using System.Windows;
 
 namespace Minesweeper
@@ -9,7 +8,7 @@ namespace Minesweeper
         protected override void OnStartup(StartupEventArgs e)
         {
             GameWindowView gameWindowView = new();
-           
+
             gameWindowView.Show();
 
             base.OnStartup(e);

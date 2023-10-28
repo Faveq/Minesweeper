@@ -1,4 +1,5 @@
-﻿using Minesweeper.ViewModels;
+﻿using Minesweeper.Models;
+using Minesweeper.ViewModels;
 using System;
 using System.Windows;
 using System.Windows.Threading;
@@ -6,19 +7,32 @@ using System.Windows.Threading;
 namespace Minesweeper.Controllers
 {
     public static class StatsController
-    {
-        private static MainViewModel viewModel;
+    {  
         private static bool isRunning;
-        private static DispatcherTimer timer = new DispatcherTimer(TimeSpan.FromSeconds(1), DispatcherPriority.Normal, TimerTick, Application.Current.Dispatcher);
+        private static MainViewModel? viewModel;
+        private static readonly DispatcherTimer _timer = new(TimeSpan.FromSeconds(1), DispatcherPriority.Normal, TimerTick, Application.Current.Dispatcher);
+        
 
+        public static void SetMinesCount(GameBoardSizeModel gameBoardSizeModel) {
+            if (gameBoardSizeModel != null && gameBoardSizeModel != null)
+            {
+               viewModel.MinesCount = gameBoardSizeModel.MinesCount;
+            }
+        }
         public static void GetViewModel(MainViewModel viewModel)
         {
-            StatsController.viewModel = viewModel;
+            if (viewModel != null)
+            {
+                StatsController.viewModel = viewModel;
+            }
+
             isRunning = false;
         }
-        private static void TimerTick(object sender, EventArgs e)
+
+        private static void TimerTick(object? sender, EventArgs e)
         {
-            if (timer.IsEnabled)
+
+            if (_timer.IsEnabled && viewModel != null)
             {
                 viewModel.ElapsedTime = viewModel.ElapsedTime.Add(TimeSpan.FromSeconds(1));
             }
@@ -28,19 +42,20 @@ namespace Minesweeper.Controllers
         {
             if (isRunning)
             {
-                timer.Stop();
+                _timer.Stop();
             }
             else
             {
-                timer.Start();
+                _timer.Start();
                 isRunning = true;
             }
         }
 
         public static void Reset()
         {
-            viewModel.ElapsedTime = TimeSpan.Zero;
-            timer.Stop();
+            if (viewModel != null)
+                viewModel.ElapsedTime = TimeSpan.Zero;
+            _timer.Stop();
             isRunning = false;
         }
 
