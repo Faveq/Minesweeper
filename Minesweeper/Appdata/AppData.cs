@@ -18,7 +18,6 @@ namespace Minesweeper.Appdata
                 string folderPath = Path.Combine(appDataFolder, "Minesweeper");
                 string filePath = Path.Combine(folderPath, "data.json");
 
-                // Zapisz obiekt do pliku w formacie JSON
                 string jsonData = JsonSerializer.Serialize(gameBoardSizeModel);
                 File.WriteAllText(filePath, jsonData);
             }
