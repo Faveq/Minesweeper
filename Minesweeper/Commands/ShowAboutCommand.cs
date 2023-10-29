@@ -12,7 +12,7 @@ namespace Minesweeper.Commands
     {
         public override void Execute(object? parameter)
         {
-            MessageBox.Show("It's a minesweeper, moron", "About", MessageBoxButton.OK, MessageBoxImage.Question);
+            MessageBox.Show("It's a minesweeper created by me, moron", "About", MessageBoxButton.OK, MessageBoxImage.Question);
         }
     }
 }
