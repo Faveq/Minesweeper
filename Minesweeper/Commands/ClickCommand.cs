@@ -114,7 +114,7 @@ namespace Minesweeper.Commands
 
         private static void DeactivateButton(Button button, int number = 0)
         {
-            Color backgroundColor = Color.FromArgb(45, 0, 0, 0); // Kolor RGBA: 0,0,0,140
+            Color backgroundColor = Color.FromArgb(45, 0, 0, 0);
             SolidColorBrush brush = new(backgroundColor);
 
             if (number != 0)

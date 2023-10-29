@@ -36,7 +36,7 @@ namespace Minesweeper.Commands
 
         public override void Execute(object? parameter)
         {
-            Color backgroundColor = Color.FromArgb(5, 0, 0, 0); // Kolor RGBA: 0,0,0,140
+            Color backgroundColor = Color.FromArgb(5, 0, 0, 0);
             SolidColorBrush brush = new(backgroundColor);
             if (parameter != null)
             {
