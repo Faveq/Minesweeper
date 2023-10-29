@@ -30,7 +30,7 @@
 
 
         <Label Grid.Row="2" VerticalContentAlignment="Center" Content="_Mines:" Margin="0 0 0 4" Target="{Binding ElementName=minesCountTextBox}" />
-        <TextBox Grid.Row="2" Width="50" Height="20" Text="{Binding MinesCount}" Name="minesCountTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="2" />
+        <TextBox Grid.Row="2" Width="50" Height="20" Text="{Binding MinesCount}" Name="minesCountTextBox" PreviewTextInput="NumberValidationTextBox" MaxLength="3" />
         
         <StackPanel Grid.Column="1" Grid.RowSpan="3" VerticalAlignment="Center">
             <Button Grid.Row="1" Grid.Column="1" Margin="0 0 0 20" Content="Ok" Click="Close" Width="50" Height="20" Command="{Binding CreateCustomGameCommand}"/>
