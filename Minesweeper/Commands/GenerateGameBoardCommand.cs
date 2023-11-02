@@ -22,8 +22,8 @@ namespace Minesweeper.Commands
         private readonly ICommand _restartGameCommand;
         private readonly ClickController _clickController;
 
-        readonly ImageBrush _sand = new(new BitmapImage(new Uri("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Sand.jpg")));
-        readonly ImageBrush _face = new(new BitmapImage(new Uri("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Face.png")));
+        readonly ImageBrush _sand = new(new BitmapImage(new Uri("Resources\\Sand.jpg", UriKind.Relative)));
+        readonly ImageBrush _face = new(new BitmapImage(new Uri("Resources\\Face.png", UriKind.Relative)));
 
 
         public GenerateGameBoardCommand(StackPanel stackPanel, Window gameWindow)

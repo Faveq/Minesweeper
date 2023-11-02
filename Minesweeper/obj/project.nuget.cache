@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "sxQUL2mS/z3DULe7QNiv/Fx5beT3gtjZTo42XprX7Qgru1ZCHX3xlz3Ew71WROiKJ49TbQUswqyljOdyRRV2ww==",
+  "dgSpecHash": "5wAoyj26jaXmz/bbjGjDPdtsQPKnwVyOnqXXDfNHau0sX3tJVBg0KW4BRPuTrKx+vyjTjpydzc7R9bQ/HwZsuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Minesweeper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\batek\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
-    "C:\\Users\\batek\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+    "C:\\Users\\batek\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\batek\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.24\\microsoft.windowsdesktop.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\batek\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.24\\microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\batek\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.24\\microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512",
+    "C:\\Users\\batek\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.24\\microsoft.netcore.app.host.win-x64.6.0.24.nupkg.sha512"
   ],
   "logs": []
 }

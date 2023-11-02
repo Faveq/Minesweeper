@@ -21,8 +21,8 @@ namespace Minesweeper.Commands
 
         private readonly GameBoardSizeModel _gameBoardSizeModel;
 
-        readonly ImageBrush _skull = new(new BitmapImage(new Uri("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Skull.png")));
-        readonly ImageBrush _trophy = new(new BitmapImage(new Uri("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Trophy.png")));
+        readonly ImageBrush _skull = new(new BitmapImage(new Uri("Resources\\Skull.png", UriKind.Relative)));
+        readonly ImageBrush _trophy = new(new BitmapImage(new Uri("Resources\\Trophy.png", UriKind.Relative)));
 
         public ClickCommand(GameBoardSizeModel gameBoardSizeModel, Button[,] buttonsList, Button restartButton)
         {
