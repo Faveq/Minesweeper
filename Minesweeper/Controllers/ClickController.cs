@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Minesweeper.Commands;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Minesweeper.Controllers
@@ -10,7 +12,7 @@ namespace Minesweeper.Controllers
         {
             if (e is MouseButtonEventArgs mouseEventArgs && mouseEventArgs.RightButton == MouseButtonState.Pressed)
             {
-
+               ClickCommand.RightButtonClicked((Button)sender);
             }
         }
     }

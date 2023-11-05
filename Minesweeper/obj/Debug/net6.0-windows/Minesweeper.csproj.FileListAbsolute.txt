@@ -33,3 +33,4 @@ C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Sand.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Skull.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Trophy.png
+C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Question_mark.png

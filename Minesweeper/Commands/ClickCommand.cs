@@ -12,7 +12,7 @@ namespace Minesweeper.Commands
     {
         private int clickedButtonPosX;
         private int clickedButtonPosY;
-        private int[,]? gameBoard;
+        private static int[,]? gameBoard;
         private bool isFirstClick = true, isEverythingUncovered = true;
         private Button[,] _buttonsList;
         private Button? clickedButton;
@@ -21,8 +21,10 @@ namespace Minesweeper.Commands
 
         private readonly GameBoardSizeModel _gameBoardSizeModel;
 
-        readonly ImageBrush _skull = new(new BitmapImage(new Uri("Resources\\Skull.png", UriKind.Relative)));
-        readonly ImageBrush _trophy = new(new BitmapImage(new Uri("Resources\\Trophy.png", UriKind.Relative)));
+        static readonly ImageBrush _skull = new(new BitmapImage(new Uri("Resources\\Skull.png", UriKind.Relative)));
+        static readonly ImageBrush _trophy = new(new BitmapImage(new Uri("Resources\\Trophy.png", UriKind.Relative)));
+        static readonly ImageBrush _questionMark = new(new BitmapImage(new Uri("Resources\\Question_mark.png", UriKind.Relative)));
+        public static readonly ImageBrush _flag = new(new BitmapImage(new Uri("Resources\\Flag.png", UriKind.Relative)));
 
         public ClickCommand(GameBoardSizeModel gameBoardSizeModel, Button[,] buttonsList, Button restartButton)
         {
@@ -45,12 +47,12 @@ namespace Minesweeper.Commands
                     PlaceMines(_gameBoardSizeModel);
                     isFirstClick = false;
 
-                    if (gameBoard[clickedButtonPosX, clickedButtonPosY] != 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] != 9)
+                    if (gameBoard[clickedButtonPosX, clickedButtonPosY] != 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] != 9 && !IsFlagged(clickedButton))
                     {
                         DeactivateButton(clickedButton, gameBoard[clickedButtonPosX, clickedButtonPosY]);
                         gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
                     }
-                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
+                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0 && !IsFlagged(clickedButton)) //empty field click
                     {
 
                         gameBoard = ExploreAreaController.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY, _gameBoardSizeModel, gameBoard);
@@ -59,19 +61,19 @@ namespace Minesweeper.Commands
                 }
                 else
                 {
-                    if (gameBoard[clickedButtonPosX, clickedButtonPosY] > 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] < 9) // number field click
+                    if (gameBoard[clickedButtonPosX, clickedButtonPosY] > 0 && gameBoard[clickedButtonPosX, clickedButtonPosY] < 9 && !IsFlagged(clickedButton)) // number field click
                     {
                         DeactivateButton(clickedButton, gameBoard[clickedButtonPosX, clickedButtonPosY]);
                         gameBoard[clickedButtonPosX, clickedButtonPosY] = -1;
                     }
-                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0) //empty field click
+                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 0 && !IsFlagged(clickedButton)) //empty field click
                     {
                         gameBoard = ExploreAreaController.ExploreEmptyArea(clickedButtonPosX, clickedButtonPosY, _gameBoardSizeModel, gameBoard);
                     }
-                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 9) //mine filed click
+                    else if (gameBoard[clickedButtonPosX, clickedButtonPosY] == 9 && !IsFlagged(clickedButton)) //mine filed click
                     {
                         gameEnd = new(_buttonsList, gameBoard);
-                        restartButton.Background = _skull; 
+                        restartButton.Background = _skull;
                         gameEnd.BadEnding();
                     }
                 }
@@ -87,16 +89,18 @@ namespace Minesweeper.Commands
                         }
                     }
                 }
+
                 //for (int y = 1; y < gameBoard.GetLength(1) - 1; y++)
                 //{
                 //    for (int x = 1; x < gameBoard.GetLength(0) - 1; x++)
                 //    {
-                //        Debug.Write(gameBoard[x, y]);      
+                //        Debug.Write(gameBoard[x, y]);
 
                 //    }
                 //    Debug.WriteLine("");
                 //}
                 //Debug.WriteLine("================================================");
+
                 if (isEverythingUncovered)
                 {
                     gameEnd = new(_buttonsList, gameBoard);
@@ -110,6 +114,26 @@ namespace Minesweeper.Commands
 
             }
 
+        }
+
+        private bool IsFlagged(Button clickedButton) { 
+        return clickedButton.Background == _flag;
+        }
+
+        public static void RightButtonClicked(Button clickedButton)
+        {
+                if (clickedButton.Background != _flag && clickedButton.Background != _questionMark)
+                {
+                    clickedButton.Background = _flag;
+                }
+                else if (clickedButton.Background == _flag)
+                {
+                    clickedButton.Background = _questionMark;
+                }
+                else if (clickedButton.Background == _questionMark)
+                {
+                    clickedButton.Background = null;
+                }
         }
 
         private static void DeactivateButton(Button button, int number = 0)

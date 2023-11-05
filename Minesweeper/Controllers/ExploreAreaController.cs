@@ -1,6 +1,9 @@
-﻿using Minesweeper.Models;
+﻿using Minesweeper.Commands;
+using Minesweeper.Models;
+using System;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Minesweeper.Controllers
 {
@@ -12,15 +15,19 @@ namespace Minesweeper.Controllers
         {
             if (buttonList != null)
             {
-                if (x < 1 || x > gameBoardSizeModel.Width || y < 1 || y > gameBoardSizeModel.Height || gameBoard[x, y] < 0 || gameBoard[x, y] > 8)
+                if (x < 1 || x > gameBoardSizeModel.Width || y < 1 || y > gameBoardSizeModel.Height || gameBoard[x, y] < 0 || gameBoard[x, y] > 8 && buttonList[x - 1, y - 1].Background != ClickCommand._flag)
                 {
                     return gameBoard;
                 }
-                else if (gameBoard[x, y] > 0 && gameBoard[x, y] < 9)
+                else if (gameBoard[x, y] > 0 && gameBoard[x, y] < 9 && buttonList[x - 1, y - 1].Background != ClickCommand._flag)
                 {
                     DeactivateButton(buttonList[x - 1, y - 1], gameBoard[x, y]);
                     gameBoard[x, y] = -1;
 
+                    return gameBoard;
+                }
+                else if (buttonList[x - 1, y - 1].Background == ClickCommand._flag)
+                {
                     return gameBoard;
                 }
 
