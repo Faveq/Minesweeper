@@ -12,13 +12,7 @@ namespace Minesweeper.Controllers
 
         private readonly Button[,] _buttonsList;
 
-        private readonly ImageBrush _mine = new(new BitmapImage(new Uri("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\mine.png")));
-        private readonly SoundPlayer[] booms = new SoundPlayer[]
-            {
-            new SoundPlayer("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Explosion1.wav"),
-            new SoundPlayer("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Explosion2.wav"),
-            new SoundPlayer("C:\\Users\\batek\\OneDrive\\Documents\\GitHub\\Minesweeper\\Minesweeper\\Resources\\Explosion3.wav")
-            };
+        private readonly ImageBrush _mine = new(new BitmapImage(new Uri("Resources\\mine.png", UriKind.Relative)));
         public GameEndController(Button[,] buttonsList, int[,] gameBoard)
         {
             _buttonsList = buttonsList;
@@ -28,8 +22,6 @@ namespace Minesweeper.Controllers
         public Button[,] BadEnding()
         {
             StatsController.StartStop();
-            Random random = new();
-            booms[random.Next(3)].Play();
             for (int y = 0; y < _buttonsList.GetLength(1); y++)
             {
                 for (int x = 0; x < _buttonsList.GetLength(0); x++)

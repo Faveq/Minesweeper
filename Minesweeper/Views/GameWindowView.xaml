@@ -11,7 +11,7 @@
 
     <DockPanel >
         <DockPanel.Background>
-            <ImageBrush ImageSource="C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\Resources\Sand.jpg" />
+            <ImageBrush/>
         </DockPanel.Background>
         <Menu DockPanel.Dock="Top">
             <Menu.Background>

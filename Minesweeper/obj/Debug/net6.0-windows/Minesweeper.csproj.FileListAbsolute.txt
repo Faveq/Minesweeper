@@ -25,12 +25,8 @@ C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\obj\Debug\net6.0-windows\Views\CustomGameSettingsView.baml
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\flag.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\mine.png
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Explosion1.wav
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Explosion2.wav
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Explosion3.wav
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Face.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Sand.jpg
-C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Sand.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Skull.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Trophy.png
 C:\Users\batek\OneDrive\Documents\GitHub\Minesweeper\Minesweeper\bin\Debug\net6.0-windows\Resources\Question_mark.png
